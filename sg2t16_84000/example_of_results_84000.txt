@@ -1,0 +1,35 @@
+﻿Example of results summary of IRNV2_755_breastUS_test.py
+
+Total number of Synthetic breast US images: 84000 (sg2t16_84000)
+2x2_IncRenNetV2_775_sg2t16_84000
+Benign
+[[120 30]
+[ 20 130]]
+Benign precision: 0.8125 ( 130 / 160.0 )
+Benign recall(sensitivity): 0.8666666666666667 ( 130 / 150.0 )
+Benign specificity: 0.8 ( 120 / 150.0 )
+Benign f_1 score: 0.8387096774193549 ( 1.4083333333333334 / 1.6791666666666667 )
+
+Malignancy
+[[130 20]
+[ 30 120]]
+Malig precision: 0.8571428571428571 ( 120 / 140.0 )
+Malig recall(sensitivity): 0.8 ( 120 / 150.0 )
+Malig specificity: 0.8666666666666667 ( 130 / 150.0 )
+Malig f_1 score: 0.8275862068965518 ( 1.3714285714285714 / 1.657142857142857 )
+
+Accuracy: 0.8333333333333334 ( 250 / 300.0 )
+
+precision recall f1-score support
+
+Benign 0.812 0.867 0.839 150
+Malignant 0.857 0.800 0.828 150
+
+accuracy 0.833 300
+macro avg 0.835 0.833 0.833 300
+weighted avg 0.835 0.833 0.833 300
+
+300/300 [==============================] - 1s 4ms/step
+AUC: 0.9053777777777778
+
+
