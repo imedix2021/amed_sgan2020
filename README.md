@@ -18,7 +18,6 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 ![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111414603-9ba7c280-8723-11eb-9ec7-483dc213d760.jpg)
 Figure1. Overall workflow
 
-
 ## 1. Image preparation
 As a training image dataset for image generation in StyleGAN2
 I prepared a 256x256 image in PNG format. Ideally, the number of images should be 10,000 or more, but if the number of images is 1000 or more, composition is possible. I used StyleGAN2 this time, but it seems that the successor version, StyleGAN2-ADA, can synthesize high-quality images with thousands of images. However, in our experience, in the case of the mammary gland ultrasound image used this time, StyleGAN2 was more suitable as supervised learning data for two-class classification than StyleGAN2-ADA, so StyleGAN2 was used this time. Information on this matter will be disclosed separately in the future.
@@ -44,6 +43,11 @@ After implementing the Anaconnda environment, the environment was constructed as
 - tensorflow-gpu            1.14.0         
 
 ## 3. Generation of synthetic images
+### Run dataset_tool.py
+Example:　python dataset_tool.py create_from_images ~/stylegan2/datasets/benign-dataset ~/BreastBenign
+
+### Run train.py
+Example: python run_training.py --num-gpus=2 --total-kimg=100000 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
 
 ## 4. InceptionResNetV2 implementation
 ## 5. Training with real images
