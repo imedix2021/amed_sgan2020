@@ -30,6 +30,17 @@ https://github.com/NVlabs/stylegan2
 
 After implementing the Anaconnda environment first, T was based on the official GitHub. We used two NVIDIA GV100 GPUs. In our experience, it was difficult to operate StyleGAN2 on GPUs lower than V100.
 After implementing the Anaconnda environment, the environment was constructed as follows.
+# Name                    Version                   Build  Channel
+keras-applications        1.0.8                      py_1  
+keras-preprocessing       1.1.0                      py_1  
+numpy-base                1.19.1           py36hfa32c7d_0  
+python                    3.6.12               hcff3b4d_2  
+tensorboard               1.14.0           py36hf484d3e_0  
+tensorflow                1.14.0          gpu_py36h3fb9ad6_0  
+tensorflow-base           1.14.0          gpu_py36he45bfe2_0  
+tensorflow-estimator      1.14.0                     py_0  
+tensorflow-gpu            1.14.0               h0d30ee6_0  
+
 
 ## 3. Generation of images
 ## 4. InceptionResNetV2 implementation
