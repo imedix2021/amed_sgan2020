@@ -16,6 +16,7 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 10. Comparision of real and synthetic case: Statistical analysis
 
 
+
 ## 1. Image preparation
 ## 2. StyleGAN2 implementation
 ## 3. Generation of images
