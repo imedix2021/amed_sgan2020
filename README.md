@@ -41,7 +41,8 @@ After implementing the Anaconnda environment, the environment was constructed as
 - tensorflow-estimator      1.14.0             
 - tensorflow-gpu            1.14.0         
 
-## 3. Generation of images
+## 3. Generation of synthetic images
+
 ## 4. InceptionResNetV2 implementation
 ## 5. Training with real images
 ## 6. Testing a model trained with　real images
