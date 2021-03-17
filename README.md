@@ -30,7 +30,9 @@ https://github.com/NVlabs/stylegan2
 
 After implementing the Anaconnda environment first, T was based on the official GitHub. We used two NVIDIA GV100 GPUs. In our experience, it was difficult to operate StyleGAN2 on GPUs lower than V100.
 After implementing the Anaconnda environment, the environment was constructed as follows.
-       
+
+- cudatoolkit               10.1.243             
+- cudnn                     7.6.5       
 - keras-applications        1.0.8                     
 - keras-preprocessing       1.1.0                  
 - numpy-base                1.19.1          
