@@ -3,7 +3,7 @@
 Norio Nakata, MD.
 
 Division of Artificial Intelligence in Medicine, Jikei University, School of Medicine
-
+### Table of contents
 1. Image preparation
 2. StyleGAN2 implementation
 3. Generation of images
@@ -61,7 +61,8 @@ Example: python tensorboard --logdir results/00010-stylegan2-benign-dataset-2gpu
 In our environment, training takes 3-4 days or more. Select the network with the lowest FID after the training and use it for image generation.
 
 ### Image generation: run_generator.py
-Example: python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=0-24999 --truncation-psi=1.0
+Example 1:ython run_generator.py generate-images --network=results/00010-stylegan2-benign-dataset-2gpu-config-e/network-snapshot-012499.pkl --seeds=1-25000 --truncation-psi=1.6
+Example 2: python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=1-25000 --truncation-psi=1.6
 
 ## 4. InceptionResNetV2 implementation
 Build another new Anaconda virtual environment as follows.
