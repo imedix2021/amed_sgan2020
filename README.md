@@ -50,6 +50,31 @@ Example:　python dataset_tool.py create_from_images ~/stylegan2/datasets/benign
 Example: python run_training.py --num-gpus=2 --total-kimg=100000 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
 
 ## 4. InceptionResNetV2 implementation
+Build another new Anaconda virtual environment as follows.
+
+- cudatoolkit               10.1.243             
+- cudnn                     7.6.5                   
+- keras                     2.3.1                          
+- keras-applications        1.0.8        After implementing another Anaconnda environment, the environment was constructed as follows.             
+- keras-base                2.3.1                   
+- keras-preprocessing       1.1.0                    
+- matplotlib                3.1.3                    
+- matplotlib-base           3.1.3             
+- numpy                     1.18.1             
+- numpy-base                1.18.1           
+- pandas                    1.0.1            
+- pillow                    7.0.0             
+- python                    3.7.6          
+- scikit-learn              0.22.1        
+- scipy                     1.4.1           
+- tensorboard               2.2.1          
+- tensorboard-plugin-wit    1.6.0        
+- tensorflow                2.2.0          
+- tensorflow-base           2.2.0           
+- tensorflow-estimator      2.2.0             
+- tensorflow-gpu            2.2.0           
+
+
 ## 5. Training with real images
 ## 6. Testing a model trained with　real images
 ## 7. Filtering the synthetic images
