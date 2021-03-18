@@ -15,7 +15,7 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 
      1-4. InceptionResNetV2 training with synthetic images
 
-2. InceptionRexNetV2 test and comparison of two models& Statistical analysis
+2. InceptionRexNetV2 test and comparison of two models & statistical analysis
 
 ![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111577690-1e00b700-87f6-11eb-8f5a-80e03be56180.jpg)
 Figure1. Overall workflow
@@ -211,4 +211,4 @@ weighted avg      0.823     0.820     0.820       300
 
 300/300 [=================
 ```
-##  2. InceptionRexNetV2 test and comparison of two models& Statistical analysis
+##  2. InceptionRexNetV2 test and comparison of two models & statistical analysis
