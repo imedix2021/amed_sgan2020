@@ -15,8 +15,7 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 
      1-4. InceptionResNetV2 training with synthetic images
 
-2. InceptionRexNetV2 test and comparison of two models
-3. Statistical analysis
+2. InceptionRexNetV2 test and comparison of two models& Statistical analysis
 
 ![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111577690-1e00b700-87f6-11eb-8f5a-80e03be56180.jpg)
 Figure1. Overall workflow
@@ -62,7 +61,7 @@ Test after training.`
 ```
 python IRV2_755_real_breastUS_test.py
 ```
-The test result is output as follows.
+The test result (example) is output as follows.
 ```
 Real 
 2x2_IncRenNetV2_775
@@ -159,42 +158,57 @@ Run the select the images of sg2t16_28000 folder.
 ```
 python IRNV2_755_28000_breast_select_all.py
 ```
+The result is when input to the malignant synthetic image sgan_out
+/ sg2t16_28000 / select_malignancy_IRNV2 /
+When input to benign composite image sgan_out
+/ sg2t16_28000 / select_benign_IRNV2 /
 
+Note１) It is better to select benign and malignant composite images separately.
+Note２) This process is performed to improve the accuracy of the image by screening the composite image with a two-class classification model preliminarily trained in real image when using it as supervised learning data.
+## 1-4. InceptionResNetV2 training with synthetic images
+Randomly select 14,000 benign and malignant images output in 1-3 above, and copy them to Breast Benign and Breast Malignancy of Train Falda in / sg2t16_28000 / hikakudata /, respectively.
+Also, the images of Breast Benign and Breast Malignancy in the Test folder are
+Data in / real / hikakudata / Test / Copy and use 150 real images for each benign and malignant.
+Then zip  / sg2t16_28000 / hikakudatahikakudata folder.
 
-## 4. InceptionResNetV2 implementation
-Build another new Anaconda virtual environment as follows.
+Run classification training: 
+```
+python IRV2_755_28000_breastUS.py
+```
+Test after training.`
+```
+python IRV2_755_28000_breastUS_test.py
+```
+The test result (example) is output as follows.
+```
+2x2_IncRenNetV2_775
+Benign
+[[130  20]
+ [ 34 116]]
+Benign precision: 0.8529411764705882 ( 116 / 136.0 )
+Benign recall(sensitivity): 0.7733333333333333 ( 116 / 150.0 )
+Benign specificity: 0.8666666666666667 ( 130 / 150.0 )
+Benign f_1 score: 0.8111888111888111 ( 1.3192156862745097 / 1.6262745098039215 )
 
-- cudatoolkit               10.1.243             
-- cudnn                     7.6.5                   
-- keras                     2.3.1                          
-- keras-applications        1.0.8                 
-- keras-base                2.3.1                   
-- keras-preprocessing       1.1.0                    
-- matplotlib                3.1.3                    
-- matplotlib-base           3.1.3             
-- numpy                     1.18.1             
-- numpy-base                1.18.1           
-- pandas                    1.0.1            
-- pillow                    7.0.0             
-- python                    3.7.6          
-- scikit-learn              0.22.1        
-- scipy                     1.4.1           
-- tensorboard               2.2.1          
-- tensorboard-plugin-wit    1.6.0        
-- tensorflow                2.2.0          
-- tensorflow-base           2.2.0           
-- tensorflow-estimator      2.2.0             
-- tensorflow-gpu            2.2.0      
-     
-References:
-1. Keras Applications
-https://keras.io/api/applications/
-2. 【Python】画像認識 - kerasで InceptionResNetV2をfine-tuningしてみる 【DeepLearning】 - PythonMania　（Japanese）
-https://www.pythonmania.work/entry/2019/04/17/154153
+Malignancy
+[[116  34]
+ [ 20 130]]
+Malig precision: 0.7926829268292683 ( 130 / 164.0 )
+Malig recall(sensitivity): 0.8666666666666667 ( 130 / 150.0 )
+Malig specificity: 0.7733333333333333 ( 116 / 150.0 )
+Malig f_1 score: 0.8280254777070064 ( 1.3739837398373984 / 1.659349593495935 )
 
-## 5. Training with real images
-## 6. Testing a model trained with　real images
-## 7. Filtering the synthetic images
-## 8. Traning with the synthetic images
-## 9. Testing a model trained with synthetiv images
-## 10. Comparision of real and synthetic case: Statistical analysis
+Accuracy: 0.82 ( 246 / 300.0 )
+
+              precision    recall  f1-score   support
+
+      Benign      0.853     0.773     0.811       150
+   Malignant      0.793     0.867     0.828       150
+
+    accuracy                          0.820       300
+   macro avg      0.823     0.820     0.820       300
+weighted avg      0.823     0.820     0.820       300
+
+300/300 [=================
+```
+##  2. InceptionRexNetV2 test and comparison of two models& Statistical analysis
