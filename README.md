@@ -58,6 +58,11 @@ Run classification training:
 ```
 python IRV2_755_real_breastUS.py
 ```
+Test after training.`
+```
+python IRV2_755_real_breastUS_test.py
+```
+
     
 References:
 1. Keras Applications
