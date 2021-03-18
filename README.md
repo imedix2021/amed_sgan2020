@@ -101,7 +101,7 @@ References:
 https://keras.io/api/applications/
 2. 【Python】画像認識 - kerasで InceptionResNetV2をfine-tuningしてみる 【DeepLearning】 - PythonMania　（Japanese）
 https://www.pythonmania.work/entry/2019/04/17/154153
-## 2. StyleGAN2 implementation
+## 1-2. Generation of synthetic images by StyleGAN2
 Regarding the implementation of StyleGAN2, it conformed to the official GitHub.
 The operating system used was Ubuntu 18.04.
 
@@ -123,27 +123,35 @@ After implementing the Anaconnda environment, the environment was constructed as
 - tensorflow-base           1.14.0         
 - tensorflow-estimator      1.14.0             
 - tensorflow-gpu            1.14.0         
-
-## 3. Generation of synthetic images
+- 
 ### Run dataset_tool.py
-Example:　python dataset_tool.py create_from_images ~/stylegan2/datasets/benign-dataset ~/BreastBenign
-
+Example:　
+```    
+python dataset_tool.py create_from_images ~/stylegan2/datasets/benign-dataset ~/BreastBenign
+```    
 ### Traing: run_train.py
-Example: python run_training.py --num-gpus=2 --total-kimg=100000 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
-
+Example: 
+```    
+python run_training.py --num-gpus=2 --total-kimg=100000 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
+```    
 ### Monitor training:　Run tensorboard
 Open another terminal and run tensorboard.
 Reference: TensorBoard: TensorFlow's visualization toolkit
 https://www.tensorflow.org/tensorboard
 
-Example: python tensorboard --logdir results/00010-stylegan2-benign-dataset-2gpu-config-e
-
+Example:
+```    
+python tensorboard --logdir results/00010-stylegan2-benign-dataset-2gpu-config-e
+```    
 In our environment, training takes 3-4 days or more. Select the network with the lowest FID after the training and use it for image generation.
 
 ### Image generation: run_generator.py
-Example 1:ython run_generator.py generate-images --network=results/00010-stylegan2-benign-dataset-2gpu-config-e/network-snapshot-012499.pkl --seeds=1-25000 --truncation-psi=1.6
-Example 2: python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=1-25000 --truncation-psi=1.6
-
+Generates 25,000 images for both benign and malignant.
+Example :
+```    
+python run_generator.py generate-images --network=results/00010-stylegan2-benign-dataset-2gpu-config-e/network-snapshot-012499.pkl --seeds=1-25000 --truncation-psi=1.6
+python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=1-25000 --truncation-psi=1.6
+```    
 ## 4. InceptionResNetV2 implementation
 Build another new Anaconda virtual environment as follows.
 
