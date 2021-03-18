@@ -53,7 +53,11 @@ Build the Anaconda virtual environment as follows.
 Download all the Codes for this GituHub.
 Copy the selected 150 images to "BreastBenign" and "BreastMalignancy" in the "Test" folder in the "hikakudata" folder in the "real" folder.
 Then zip the hikakudata folder.
-Run classification training: python IRV2_755_real_breastUS.py
+
+Run classification training: 
+```
+python IRV2_755_real_breastUS.py
+```
     
 References:
 1. Keras Applications
