@@ -6,10 +6,10 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 ### Table of contents
 0. Image preparation
 1. Training for image classification
-     1-1. InceptionResNetV2 training with real images
-     1-2. Generation of synthetic images by StyleGAN2
-     1-3. Selection of synthetic images by trained model of real images
-     1-4. InceptionResNetV2 training with synthetic images
+ 1-1. InceptionResNetV2 training with real images
+ 1-2. Generation of synthetic images by StyleGAN2
+ 1-3. Selection of synthetic images by trained model of real images
+ 1-4. InceptionResNetV2 training with synthetic images
 2. InceptionRexNetV2 test and comparison of two models
 3. Statistical analysis
 
