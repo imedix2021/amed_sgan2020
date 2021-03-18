@@ -213,8 +213,6 @@ weighted avg      0.823     0.820     0.820       300
 ```
 ##  2. InceptionRexNetV2 test and comparison of two models & statistical analysis
 From the test results of 1-1. InceptionResNetV2 training with real images and 1-4. InceptionResNetV2 training with synthetic images, it was analyzed by the Mcnemar test whether there was a significant difference between them.
-Reference: statsmodels.stats.contingency_tables.mcnemar — statsmodels
-https://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html
 Example:mcnemar.py
 ```
 import numpy as np
@@ -228,3 +226,17 @@ Output：p-value
 ```
 6.169640777642373e-05
 ```
+### Refernces
+1. statsmodels.stats.contingency_tables.mcnemar — statsmodels
+https://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html
+2. The Difference Between a Chi-Square Test and a McNemar Test - The Analysis Factor
+ https://www.theanalysisfactor.com/difference-between-chi-square-test-and-mcnemar-test/
+3.  McNemar検定 (japanese)
+https://oku.edu.mie-u.ac.jp/~okumura/stat/mcnemar.html
+4. How to Calculate McNemar's Test to Compare Two Machine Learning Classifiers
+https://machinelearningmastery.com/mcnemars-test-for-machine-learning/
+5. Pythonでマクネマー検定を行う方法【プログラミング】 - 税理士目指す人のブログ (japanese)
+https://www.i-like-output.work/entry/20200114
+
+
+
