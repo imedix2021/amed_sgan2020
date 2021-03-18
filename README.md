@@ -212,3 +212,6 @@ weighted avg      0.823     0.820     0.820       300
 300/300 [=================
 ```
 ##  2. InceptionRexNetV2 test and comparison of two models & statistical analysis
+From the test results of 1-1. InceptionResNetV2 training with real images and 1-4. InceptionResNetV2 training with synthetic images, it was analyzed by the Mcnemar test whether there was a significant difference between them.
+Reference: statsmodels.stats.contingency_tables.mcnemar — statsmodels
+https://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html
