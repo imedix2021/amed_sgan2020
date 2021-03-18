@@ -152,6 +152,15 @@ Example :
 python run_generator.py generate-images --network=results/00010-stylegan2-benign-dataset-2gpu-config-e/network-snapshot-012499.pkl --seeds=1-25000 --truncation-psi=1.6
 python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=1-25000 --truncation-psi=1.6
 ```    
+## 1-3. Selection of synthetic images by trained model of real images
+Copy the created 25,000 images to the / sg2t16_28000 / sgan_out / BreastBenign and BreastMalignancy folders, respectively.
+Then zip the sgan_out foldger.
+Run the select the images of sg2t16_28000 folder.
+```
+python IRNV2_755_28000_breast_select_all.py
+```
+
+
 ## 4. InceptionResNetV2 implementation
 Build another new Anaconda virtual environment as follows.
 
