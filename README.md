@@ -15,7 +15,7 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 9. Testing a model trained with synthetiv images
 10. Comparision of real and synthetic case: Statistical analysis
 
-https://user-images.githubusercontent.com/47726033/111577489-b8142f80-87f5-11eb-9348-0f0fbfe33356.jpg
+![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111577690-1e00b700-87f6-11eb-8f5a-80e03be56180.jpg)
 Figure1. Overall workflow
 
 ## 1. Image preparation
