@@ -21,9 +21,45 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 ![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111577690-1e00b700-87f6-11eb-8f5a-80e03be56180.jpg)
 Figure1. Overall workflow
 
-## 1. Image preparation
-As a training image dataset for image generation in StyleGAN2
-I prepared a 256x256 image in PNG format. Ideally, the number of images should be 10,000 or more, but if the number of images is 1000 or more, composition is possible. I used StyleGAN2 this time, but it seems that the successor version, StyleGAN2-ADA, can synthesize high-quality images with thousands of images. However, in our experience, in the case of the mammary gland ultrasound image used this time, StyleGAN2 was more suitable as supervised learning data for two-class classification than StyleGAN2-ADA, so StyleGAN2 was used this time. Information on this matter will be disclosed separately in the future.
+## 0. Image preparation
+First, the images are divided into "Train" and "Test".
+150 benign and malignant images for the "Test", and the others are randomly selected and classified for "Train". The image format uses BMP for classification and PNG for image generation. All image sizes are 256x256.
+Ideally, the number of images should be 10,000 or more, but if the number of images is 1000 or more, composition is possible. I used StyleGAN2 this time, but it seems that the successor version, StyleGAN2-ADA, can synthesize high-quality images with thousands of images. However, in our experience, in the case of the mammary gland ultrasound image used this time, StyleGAN2 was more suitable as supervised learning data for two-class classification than StyleGAN2-ADA, so StyleGAN2 was used this time. Information on this matter will be disclosed separately in the future.
+## 1. Training for image classification
+### 1-1. InceptionResNetV2 training with real images
+Build the Anaconda virtual environment as follows.
+- cudatoolkit               10.1.243             
+- cudnn                     7.6.5                   
+- keras                     2.3.1                          
+- keras-applications        1.0.8                 
+- keras-base                2.3.1                   
+- keras-preprocessing       1.1.0                    
+- matplotlib                3.1.3                    
+- matplotlib-base           3.1.3             
+- numpy                     1.18.1             
+- numpy-base                1.18.1           
+- pandas                    1.0.1            
+- pillow                    7.0.0             
+- python                    3.7.6          
+- scikit-learn              0.22.1        
+- scipy                     1.4.1           
+- tensorboard               2.2.1          
+- tensorboard-plugin-wit    1.6.0        
+- tensorflow                2.2.0          
+- tensorflow-base           2.2.0           
+- tensorflow-estimator      2.2.0             
+- tensorflow-gpu            2.2.0    
+
+Download all the Codes for this GituHub.
+Copy the selected 150 images to "BreastBenign" and "BreastMalignancy" in the "Test" folder in the "hikakudata" folder in the "real" folder.
+Then zip the hikakudata folder.
+Run classification training: python IRV2_755_real_breastUS.py
+    
+References:
+1. Keras Applications
+https://keras.io/api/applications/
+2. 【Python】画像認識 - kerasで InceptionResNetV2をfine-tuningしてみる 【DeepLearning】 - PythonMania　（Japanese）
+https://www.pythonmania.work/entry/2019/04/17/154153
 ## 2. StyleGAN2 implementation
 Regarding the implementation of StyleGAN2, it conformed to the official GitHub.
 The operating system used was Ubuntu 18.04.
