@@ -49,7 +49,7 @@ After implementing the Anaconnda environment, the environment was constructed as
 Example:　python dataset_tool.py create_from_images ~/stylegan2/datasets/benign-dataset ~/BreastBenign
 
 ### Traing: run_train.py
-Example: python run_training.py --num-gpus=2 --total-kimg=100000 --gamma=100 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
+Example: python run_training.py --num-gpus=2 --total-kimg=100000 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
 
 ### Monitor training:　Run tensorboard
 Open another terminal and run tensorboard.
@@ -61,7 +61,7 @@ Example: python tensorboard --logdir results/00010-stylegan2-benign-dataset-2gpu
 In our environment, training takes 3-4 days or more. Select the network with the lowest FID after the training and use it for image generation.
 
 ### Image generation: run_generator.py
-Example: python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=0-19999 --truncation-psi=1.0
+Example: python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=0-24999 --truncation-psi=1.0
 
 ## 4. InceptionResNetV2 implementation
 Build another new Anaconda virtual environment as follows.
