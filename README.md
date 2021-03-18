@@ -62,6 +62,8 @@ Test after training.`
 ```
 python IRV2_755_real_breastUS_test.py
 ```
+The test result is output as follows.
+
 
     
 References:
