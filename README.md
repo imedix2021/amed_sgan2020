@@ -23,11 +23,13 @@ As a training image dataset for image generation in StyleGAN2
 I prepared a 256x256 image in PNG format. Ideally, the number of images should be 10,000 or more, but if the number of images is 1000 or more, composition is possible. I used StyleGAN2 this time, but it seems that the successor version, StyleGAN2-ADA, can synthesize high-quality images with thousands of images. However, in our experience, in the case of the mammary gland ultrasound image used this time, StyleGAN2 was more suitable as supervised learning data for two-class classification than StyleGAN2-ADA, so StyleGAN2 was used this time. Information on this matter will be disclosed separately in the future.
 ## 2. StyleGAN2 implementation
 Regarding the implementation of StyleGAN2, it conformed to the official GitHub.
+The operating system used was Ubuntu 18.04.
 
 // NVlabs/stylegan2: StyleGAN2 - Official TensorFlow Implementation
 https://github.com/NVlabs/stylegan2
 
-After implementing the Anaconnda environment first, T was based on the official GitHub. We used two NVIDIA GV100 GPUs. In our experience, it was difficult to operate StyleGAN2 on GPUs lower than V100.
+After implementing the Anaconnda environment first, T was based on the official GitHub. We used two NVIDIA GV100 GPUs. For StyleGAN, GPUs of Volta generation and above are recommended.
+
 After implementing the Anaconnda environment, the environment was constructed as follows.
 
 - cudatoolkit               10.1.243             
@@ -46,8 +48,20 @@ After implementing the Anaconnda environment, the environment was constructed as
 ### Run dataset_tool.py
 Example:　python dataset_tool.py create_from_images ~/stylegan2/datasets/benign-dataset ~/BreastBenign
 
-### Run train.py
-Example: python run_training.py --num-gpus=2 --total-kimg=100000 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
+### Traing: run_train.py
+Example: python run_training.py --num-gpus=2 --total-kimg=100000 --gamma=100 --data-dir=datasets --config=config-e --dataset=benign-dataset --mirror-augment=true
+
+### Monitor training:　Run tensorboard
+Open another terminal and run tensorboard.
+Reference: TensorBoard: TensorFlow's visualization toolkit
+https://www.tensorflow.org/tensorboard
+
+Example: tensorboard --logdir results/00010-stylegan2-benign-dataset-2gpu-config-e
+
+In our environment, training takes 3-4 days or more. Select the network with the lowest FID after the training and use it for image generation.
+
+### Image generation: run_generator.py
+Example: python run_generator.py generate-images --network=results/00011-stylegan2-cancer-dataset-2gpu-config-e/network-snapshot-009918.pkl --seeds=0-19999 --truncation-psi=1.0
 
 ## 4. InceptionResNetV2 implementation
 Build another new Anaconda virtual environment as follows.
@@ -55,7 +69,7 @@ Build another new Anaconda virtual environment as follows.
 - cudatoolkit               10.1.243             
 - cudnn                     7.6.5                   
 - keras                     2.3.1                          
-- keras-applications        1.0.8        After implementing another Anaconnda environment, the environment was constructed as follows.             
+- keras-applications        1.0.8                 
 - keras-base                2.3.1                   
 - keras-preprocessing       1.1.0                    
 - matplotlib                3.1.3                    
@@ -79,8 +93,6 @@ References:
 https://keras.io/api/applications/
 2. 【Python】画像認識 - kerasで InceptionResNetV2をfine-tuningしてみる 【DeepLearning】 - PythonMania　（Japanese）
 https://www.pythonmania.work/entry/2019/04/17/154153
-
-
 
 ## 5. Training with real images
 ## 6. Testing a model trained with　real images
