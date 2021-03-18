@@ -215,13 +215,18 @@ weighted avg      0.823     0.820     0.820       300
 From the test results of 1-1. InceptionResNetV2 training with real images and 1-4. InceptionResNetV2 training with synthetic images, it was analyzed by the Mcnemar test whether there was a significant difference between them.
 Reference: statsmodels.stats.contingency_tables.mcnemar — statsmodels
 https://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html
-Example:
+Example:mcnemar.py
 ```
 import numpy as np
 from statsmodels.stats import contingency_tables
 
 ar = np.array([[223,10],[38,29]])
 a = contingency_tables.mcnemar(ar).pvalue
-print(a)
+print(a)　
 ```
+Output：p-value
+```
+6.169640777642373e-05
+7.```
+
 
