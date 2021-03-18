@@ -56,7 +56,7 @@ Open another terminal and run tensorboard.
 Reference: TensorBoard: TensorFlow's visualization toolkit
 https://www.tensorflow.org/tensorboard
 
-Example: tensorboard --logdir results/00010-stylegan2-benign-dataset-2gpu-config-e
+Example: python tensorboard --logdir results/00010-stylegan2-benign-dataset-2gpu-config-e
 
 In our environment, training takes 3-4 days or more. Select the network with the lowest FID after the training and use it for image generation.
 
