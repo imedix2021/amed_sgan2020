@@ -17,7 +17,7 @@ Division of Artificial Intelligence in Medicine, Jikei University, School of Med
 
 2. InceptionRexNetV2 test and comparison of two models & statistical analysis
 
-![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111577690-1e00b700-87f6-11eb-8f5a-80e03be56180.jpg)
+![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111586385-15af7880-8804-11eb-95d3-d82cddf24235.jpg)
 Figure1. Overall workflow
 
 ## 0. Image preparation
