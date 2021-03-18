@@ -75,10 +75,9 @@ Build another new Anaconda virtual environment as follows.
 - tensorflow-gpu            2.2.0      
      
 References:
-
 1. Keras Applications
 https://keras.io/api/applications/
-2.【Python】画像認識 - kerasで InceptionResNetV2をfine-tuningしてみる 【DeepLearning】 - PythonMania　（Japanese）
+2. 【Python】画像認識 - kerasで InceptionResNetV2をfine-tuningしてみる 【DeepLearning】 - PythonMania　（Japanese）
 https://www.pythonmania.work/entry/2019/04/17/154153
 
 
