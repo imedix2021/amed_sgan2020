@@ -214,6 +214,10 @@ weighted avg      0.823     0.820     0.820       300
 ## *Synthetic train data augmentation*
 Due to the memory limitations, the maximum number of training images per session was limited to 14000 for each of the benign and malignant lesion groups (total 28000 images). Therefore, we started training with 14000 benign and 14000 malignant lesions, saved the model and weight after training, used it as a fine-tuning model, and repeated training with the same IRNV2 algorithm for images of 14000 benign and 14000 malignant lesions, which were newly synthesized and selected. After each training session, the training was repeated for each of the 14000 newly synthesized and selected images using the same IRNV2 algorithm.
 
+After step ”1-4. InceptionResNetV2 training with synthetic images” is finished, go back to step ”1-2. Generation of synthetic images by StyleGAN2”
+Data augmentation is performed by repeating again.
+"sg2t16_140000", "sg2t16_280000", "sg2t16_560000", and "sg2t16_840000"　folders are cascade process of above data augmentation.
+
 ##  2. InceptionRexNetV2 test and comparison of two models & statistical analysis
 From the test results of 1-1. InceptionResNetV2 training with real images and 1-4. InceptionResNetV2 training with synthetic images, it was analyzed by the Mcnemar test whether there was a significant difference between them.
 
