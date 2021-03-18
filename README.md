@@ -4,16 +4,14 @@ Norio Nakata, MD.
 
 Division of Artificial Intelligence in Medicine, Jikei University, School of Medicine
 ### Table of contents
-1. Image preparation
-2. StyleGAN2 implementation
-3. Generation of images
-4. InceptionResNetV2 implementation
-5. Training with real images
-6. Testing a model trained with　real images
-7. Filtering the synthetic images
-8. Traning with the synthetic images
-9. Testing a model trained with synthetiv images
-10. Comparision of real and synthetic case: Statistical analysis
+0. Image preparation
+1. Training for image classification
+     1-1. InceptionResNetV2 training with real images
+     1-2. Generation of synthetic images by StyleGAN2
+     1-3. Selection of synthetic images by trained model of real images
+     1-4. InceptionResNetV2 training with synthetic images
+2. InceptionRexNetV2 test and comparison of two models
+3. Statistical analysis
 
 ![プレゼンテーション1](https://user-images.githubusercontent.com/47726033/111577690-1e00b700-87f6-11eb-8f5a-80e03be56180.jpg)
 Figure1. Overall workflow
