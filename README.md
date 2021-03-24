@@ -288,14 +288,14 @@ else:
 	print('Different proportions of errors (reject H0)')　
 ```
 ### Refernces
-1. statsmodels.stats.contingency_tables.mcnemar — statsmodels
-https://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html
-2. The Difference Between a Chi-Square Test and a McNemar Test - The Analysis Factor
- https://www.theanalysisfactor.com/difference-between-chi-square-test-and-mcnemar-test/
-3.  McNemar検定 (japanese)
-https://oku.edu.mie-u.ac.jp/~okumura/stat/mcnemar.html
-4. How to Calculate McNemar's Test to Compare Two Machine Learning Classifiers
+1. How to Calculate McNemar's Test to Compare Two Machine Learning Classifiers
 https://machinelearningmastery.com/mcnemars-test-for-machine-learning/
+2. statsmodels.stats.contingency_tables.mcnemar — statsmodels
+https://www.statsmodels.org/dev/generated/statsmodels.stats.contingency_tables.mcnemar.html
+3. The Difference Between a Chi-Square Test and a McNemar Test - The Analysis Factor
+ https://www.theanalysisfactor.com/difference-between-chi-square-test-and-mcnemar-test/
+4.  McNemar検定 (japanese)
+https://oku.edu.mie-u.ac.jp/~okumura/stat/mcnemar.html
 5. Pythonでマクネマー検定を行う方法【プログラミング】 - 税理士目指す人のブログ (japanese)
 https://www.i-like-output.work/entry/20200114
 
