@@ -246,7 +246,7 @@ with open('./predictionsIncResNetV2_775_real.csv') as r:
     r_int = [int(n) for n in r_fl]
     print(r_int)
 
-with open('./predictionsIncResNetV2_755_SG2T16FT2.csv') as s:
+with open('./predictionsIncResNetV2_755_84000.csv') as s:
     s_str = [str(n) for n in s]
     s_fl = [float(n) for n in s_str]
     s_int = [int(n) for n in s_fl]
