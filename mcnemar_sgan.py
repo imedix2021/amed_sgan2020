@@ -41,14 +41,14 @@ print (cm)
 # define contingency table
 #                             Synthetic
 #                      Correct(1)   Incrrect(0)  
-# Real    Correct(1)      TP           FN
-#         Incorrect(0)    FP           TN
+# Real    Correct(1)   Yes/Yes(YY)    Yes/No(FN)
+#
 print()
-TP = cm[1][1]
-TN = cm[0][0]
-FP = cm[0][1]
-FN = cm[1][0]
-ar = np.array([[TP,FN],[FP,TN]])
+YY = cm[1][1]
+NN = cm[0][0]
+NY = cm[0][1]
+YN = cm[1][0]
+ar = np.array([[YY,YN],[NY,NN]])
 
 # calculate mcnemar test
 result = mcnemar(ar, exact=True)
