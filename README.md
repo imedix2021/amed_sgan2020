@@ -221,18 +221,72 @@ Data augmentation is performed by repeating again.
 ##  2. InceptionRexNetV2 test and comparison of two models & statistical analysis
 From the test results of 1-1. InceptionResNetV2 training with real images and 1-4. InceptionResNetV2 training with synthetic images, it was analyzed by the Mcnemar test whether there was a significant difference between them.
 
-Example:mcnemar.py
-```
-import numpy as np
-from statsmodels.stats import contingency_tables
+The Mcnemar test is a test for whether or not there is a difference between the results of two paired binary types of processing and is used in the case of corresponding data in a two-row by two-column crosstabulation table.
 
-ar = np.array([[223,10],[38,29]])
-a = contingency_tables.mcnemar(ar).pvalue
-print(a)　
+Example:mcnemar_sgan.py
 ```
-Output：p-value
-```
-6.169640777642373e-05
+import csv
+import pprint
+import numpy as np
+from sklearn.metrics import confusion_matrix
+from statsmodels.stats.contingency_tables import mcnemar
+
+# benign(0) / malignant(1) csv data entry
+# c_int: integer type array data　of correct answers 
+# r_int: integer type array data　of prediction aswers using real images
+# s_int: integer type array data　of prediction aswers using synthetic images
+with open('./correctIncResNetV2_775_real.csv') as c:
+    c_str = [str(n) for n in c]
+    c_fl = [float(n) for n in c_str]
+    c_int = [int(n) for n in c_fl]
+    print(c_int)
+with open('./predictionsIncResNetV2_775_real.csv') as r:
+    r_str = [str(n) for n in r]
+    r_fl = [float(n) for n in r_str]
+    r_int = [int(n) for n in r_fl]
+    print(r_int)
+
+with open('./predictionsIncResNetV2_755_SG2T16FT2.csv') as s:
+    s_str = [str(n) for n in s]
+    s_fl = [float(n) for n in s_str]
+    s_int = [int(n) for n in s_fl]
+    print(s_int)
+
+# array data preparation
+c = np.array(c_int)
+r = np.array(r_int)
+s = np.array(s_int)
+
+# correct / incorrect aggregatee
+cr_compare = c == r
+print (cr_compare)
+cs_compare = c == s
+print (cs_compare)
+cm = confusion_matrix(cr_compare, cs_compare)
+print (cm)
+
+# define contingency table
+#                             Synthetic
+#                      Correct(1)   Incrrect(0)  
+# Real    Correct(1)      TP           FN
+#         Incorrect(0)    FP           TN
+print()
+TP = cm[1][1]
+TN = cm[0][0]
+FP = cm[0][1]
+FN = cm[1][0]
+ar = np.array([[TP,FN],[FP,TN]])
+
+# calculate mcnemar test
+result = mcnemar(ar, exact=True)
+# summarize the finding
+print('statistic=%.3f, p-value=%.18f' % (result.statistic, result.pvalue))
+# interpret the p-value
+alpha = 0.05
+if result.pvalue > alpha:
+	print('Same proportions of errors (fail to reject H0)')
+else:
+	print('Different proportions of errors (reject H0)')　
 ```
 ### Refernces
 1. statsmodels.stats.contingency_tables.mcnemar — statsmodels
