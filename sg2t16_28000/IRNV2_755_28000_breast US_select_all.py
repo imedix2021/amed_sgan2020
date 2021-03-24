@@ -97,10 +97,10 @@ pred_classes = np.argmax(model.predict(X_test[0:50000]), axis = 1)
 print('prediction:', pred_classes)
 
 # Create a copy destination folder
-Malig_DIR = '/sg2t16_28000/select_malignancy_IncRNV2/'
+Malig_DIR = '/sg2t16_28000/select_malignancy_IRNV2/'
 if not os.path.exists(Malig_DIR):
     os.mkdir(Malig_DIR)
-Benign_DIR = '/sg2t16_28000/select_benign_IncRNV2/'
+Benign_DIR = '/sg2t16_28000/select_benign_IRNV2/'
 if not os.path.exists(Benign_DIR):
     os.mkdir(Benign_DIR)
 

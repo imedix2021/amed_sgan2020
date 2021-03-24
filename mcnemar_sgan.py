@@ -42,7 +42,7 @@ print (cm)
 #                             Synthetic
 #                      Correct(1)   Incrrect(0)  
 # Real    Correct(1)   Yes/Yes(YY)    Yes/No(FN)
-#
+#         Incorrect(0)  No/Yes(NY)    No/No(NN)
 print()
 YY = cm[1][1]
 NN = cm[0][0]
