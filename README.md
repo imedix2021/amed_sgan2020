@@ -122,7 +122,6 @@ After implementing the Anaconnda environment, the environment was constructed as
 - tensorflow-base           1.14.0         
 - tensorflow-estimator      1.14.0             
 - tensorflow-gpu            1.14.0         
-- 
 ### Run dataset_tool.py
 Example:　
 ```    
