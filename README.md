@@ -23,7 +23,7 @@ Figure1. Overall workflow
 ## 0. Image preparation
 First, the images are divided into "Train" and "Test".
 150 benign and malignant images for the "Test", and the others are randomly selected and classified for "Train". The image format uses BMP for classification and PNG for image generation. All image sizes are 256x256.
-Ideally, the number of images should be 10,000 or more, but if the number of images is 1000 or more, composition is possible. I used StyleGAN2 this time, but it seems that the successor version, StyleGAN2-ADA, can synthesize high-quality images with thousands of images. However, in our experience, in the case of the mammary gland ultrasound image used this time, StyleGAN2 was more suitable as supervised learning data for two-class classification than StyleGAN2-ADA, so StyleGAN2 was used this time. Information on this matter will be disclosed separately in the future.
+Ideally, the number of images should be 10,000 or more, but if the number of images is 1000 or more, composition is possible. I used StyleGAN2 this time, but it seems that the successor version, StyleGAN2-ADA, can synthesize high-quality images with thousands of images. However, in our experience, in the case of the breast ultrasound images used this time, StyleGAN2 was more suitable as supervised learning data for two-class classification than StyleGAN2-ADA, so StyleGAN2 was used this time. Information on this matter will be disclosed separately in the future.
 ## 1. Training for image classification
 ### 1-1. InceptionResNetV2 training with real images
 Build the Anaconda virtual environment as follows.
