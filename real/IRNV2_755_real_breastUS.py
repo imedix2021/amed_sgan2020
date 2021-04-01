@@ -68,6 +68,9 @@ X_train = X_train.astype('float32')
 # Normalization
 X_train /= 255
 
+# one-hot conversion
+y_train = to_categorical(y_train, num_classes = num_classes)
+
 # Split valid data from train data klearn.model_selection import Use KFold (10 splits)
 kf = KFold(n_splits=10, shuffle=True)
 
